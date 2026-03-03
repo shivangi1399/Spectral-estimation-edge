@@ -8,6 +8,9 @@ software_folder/
 # Simulated data (large)
 data/simulated_data/
 
+# Original readme (kept locally, not on GitHub)
+readme.txt
+
 # MATLAB generated files
 *.asv
 *.mex*
