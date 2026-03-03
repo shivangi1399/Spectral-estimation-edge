@@ -24,7 +24,7 @@ This repository contains the implementation of the AR Fourier method for phase e
 
 ## Data Availability
 
-Data files (`.mat`) are not included in this repository due to their size. The data required to reproduce the results will be made available on Zenodo/OSF/Figshare (link to be added).
+Data files (`.mat`) are not included in this repository due to their size. The data required to reproduce the results will be made available on Zenodo.
 
 ## Folder Structure
 
