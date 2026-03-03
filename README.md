@@ -50,13 +50,30 @@ Data files (`.mat`) are not included in this repository due to their size. The d
 │       └── data_gen_n.py                  # Generate simulated datasets
 ├── data/
 │   ├── simulated_data/                    # CSV files for simulated data (example: freq46_11)
-│   └── empirical_data/                    # Recorded data from macaque area V4
+│   └── empirical_data/                    # Recorded data from macaque area V4 (see below)
 ├── results/
-│   ├── simulated_data/                    # Phase estimates in FieldTrip format
+│   ├── simulated_data/                    # Phase estimates in FieldTrip format (see below)
 │   └── empirical_data/                    # Processed monkey data and phase estimation results
 ├── comparison/
 └── plotting/
 ```
+
+### Data Details
+
+**Simulated data** (`data/simulated_data/`): Contains CSV files with simulated data. Data corresponding to all phase diffusion and noise coefficient values for 4 Hz and 6 Hz frequencies in 1:1 ratio is provided as an example in the folder `freq46_11`.
+
+**Empirical data** (`data/empirical_data/`): Contains a MAT file with recorded data from macaque area V4. The `trialinfo` field contains information about each trial in the session:
+| Column | Description |
+|--------|-------------|
+| 1 | Trial number within session |
+| 2 | X coordinate of the target |
+| 3 | Y coordinate of the target |
+| 4 | Difficulty level |
+| 5 | Outcome of the trial (e.g., correct, incorrect) |
+
+**Simulated results** (`results/simulated_data/`): Contains data files in FieldTrip format and phase estimates for each dataset. One example dataset is provided in the folder `freq46_11/0.251/0.5`, corresponding to frequencies 4 Hz and 6 Hz in a 1:1 ratio, phase diffusion of 0.251, and noise coefficient of 0.5. Detailed phase estimate components are provided only for this dataset due to space constraints.
+
+**Empirical results** (`results/empirical_data/`): Contains processed monkey data, phase estimation results, and intermediate data needed to run AR Fourier.
 
 ## Instructions
 
@@ -90,12 +107,21 @@ Data files (`.mat`) are not included in this repository due to their size. The d
 
 If SLURM is not available, modify the code to run iterations locally. Alternatives for local execution are provided in the comments of `AR_fourier_imp.m`. Note that running locally can be time-consuming and memory-intensive.
 
+### Using with Your Own Data
+
+This code can be used on any dataset after converting it to [FieldTrip format](https://www.fieldtriptoolbox.org/faq/how_are_the_various_data_structures_defined/).
+
 ## Parameters
 
 The following parameters can be adjusted in `AR_Fourier_method.m`:
 - **Number of Iterations**: How many autoregressive extrapolation iterations are performed
 - **Number of Extrapolated Samples**: How many samples to extrapolate beyond the edge
 - **Number of Cycles for Spectral Estimation**: Cycles used during spectral estimation
+
+## Notes
+
+- **Running locally**: If SLURM is unavailable, executing the AR extrapolation iterations locally can be very time-consuming and may require significant memory.
+- **Simulated data**: The example data consists of two sinusoids at 4 Hz and 6 Hz, with known phase values for these frequencies. Use `data_gen_n.py` to generate similar datasets.
 
 ## Citation
 
