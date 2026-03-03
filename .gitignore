@@ -1,0 +1,15 @@
+# Large data files
+*.mat
+*.nbf
+
+# Third-party software
+software_folder/
+
+# Simulated data (large)
+data/simulated_data/
+
+# MATLAB generated files
+*.asv
+*.mex*
+*.mlappinstall
+*.mltbx
