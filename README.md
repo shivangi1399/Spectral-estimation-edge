@@ -13,8 +13,8 @@ This repository contains the implementation of the AR Fourier method for phase e
 ## Requirements
 
 - **MATLAB** (tested with R2021b or later)
-- **[FieldTrip](https://www.fieldtriptoolbox.org/)** — EEG/MEG analysis toolbox
-- **[slurmfun](https://github.com/esi-neuroscience/slurmfun)** — for parallel computing on SLURM clusters (optional)
+- **[FieldTrip](https://www.fieldtriptoolbox.org/)** — Signal processing analysis toolbox
+- **[slurmfun](https://github.com/esi-neuroscience/slurmfun)** — for parallel computing on SLURM clusters
 - **Python 3** with the following packages (only for data generation):
   - numpy
   - matplotlib
